@@ -29,18 +29,19 @@ const Details = (props) => {
   return (
     <div className='detais'>
       {error && <p>Something went wrong...</p>}
-      {isLoading && <p className='loading'>Loading...</p>}
-      {user && (
-        <ul className='detais__container'>
-        <li className='detais__avatar'>
-          <img src={user.avatar} alt='profile pic'/></li>
-        <li className=' detais__item detais__name'>{name}</li>
-        <li className='detais__item'>City: {user.details.city}</li>
-        <li className='detais__item'>Company: {user.details.company}</li>
-        <li className='detais__item'>Position: {user.details.position}</li>
-      </ul>
-      )}
-  </div>)
+      {isLoading ? <p className='loading'>Loading...</p> :
+        user && (
+          <ul className='detais__container'>
+          <li className='detais__avatar'>
+            <img src={user.avatar} alt='profile pic'/></li>
+          <li className=' detais__item detais__name'>{name}</li>
+          <li className='detais__item'>City: {user.details.city}</li>
+          <li className='detais__item'>Company: {user.details.company}</li>
+          <li className='detais__item'>Position: {user.details.position}</li>
+        </ul>
+        )}
+    </div>
+  )
 }
 
 Details.propTypes = {
